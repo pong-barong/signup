@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+        <style>
+    ul {
+        display: flex;
+    }
+    li {
+        list-style-type: none;
+    }
+	</style>
+    <link href="{% static 'style2.css' %}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="contents">
+	<img src="{% static 'teleboatresearch_logo.png' %}" alt="サービスロゴ">
+	<hr class="cp_hr05" />
+</div>
+<form method="post" action="/addapp/complete/">
+    {% csrf_token %}
+    こちらから利用するためのユーザ情報の登録を行ってください
+    <br>
+    <br>
+    <tr>
+        <td align="right"><b> ユーザIDを登録してください：</b></td>
+        <td><input type="text" name="user_id" size="30" maxlength="20"></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <td align="right"><b> パスワードを登録してください：</b></td>
+        <td><input type="text" name="password" size="30" maxlength="20"></td>
+    </tr>
+    <br>
+    <br>
+    <button type="submit" >登録する</button>
+
+</form>
+</body>
+</html>
